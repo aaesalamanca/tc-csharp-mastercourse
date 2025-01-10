@@ -1,4 +1,16 @@
-﻿string AskUserForInfo(string message)
+﻿ShowAppInfo();
+var firstName = AskUserForFirstName();
+var age = AskUserForAge();
+
+void ShowAppInfo()
+{
+    Console.WriteLine("####################################");
+    Console.WriteLine("####### CSharpStudentCheckTC #######");
+    Console.WriteLine("####################################");
+    Console.WriteLine();
+}
+
+string AskUserForInfo(string message)
 {
     Console.Write(message);
     return Console.ReadLine() ?? string.Empty;
@@ -44,6 +56,3 @@ int AskUserForAge()
         return int.Parse(textAge);
     } while (true);
 }
-
-var firstName = AskUserForFirstName();
-var age = AskUserForAge();
