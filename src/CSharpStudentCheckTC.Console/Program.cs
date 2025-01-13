@@ -2,6 +2,23 @@
 var firstName = AskUserForFirstName();
 var age = AskUserForAge();
 
+var outputMessage =
+    "Hello, "
+    + firstName.ToLower() switch
+    {
+        "bob" or "sue" => $"Professor {firstName}",
+        _ => firstName,
+    }
+    + ". ";
+
+outputMessage += age switch
+{
+    >= 21 => "Welcome to the class.",
+    _ => $"You have to wait {21 - age} years to join the class.",
+};
+
+Console.WriteLine(outputMessage);
+
 void ShowAppInfo()
 {
     Console.WriteLine("####################################");
