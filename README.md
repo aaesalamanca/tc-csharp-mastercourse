@@ -1,4 +1,4 @@
-# CSharpStudentCheckTC
+# C Sharp Student Check Tim Corey
 
 Esta aplicación de consola está basada en el primer mini proyecto propuesto por Tim Corey en su curso: [C# Mastercourse](https://www.iamtimcorey.com/courses/csharp-mastercourse/).
 
