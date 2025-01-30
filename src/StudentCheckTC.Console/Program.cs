@@ -22,7 +22,7 @@ Console.WriteLine(outputMessage);
 void ShowAppInfo()
 {
     Console.WriteLine("####################################");
-    Console.WriteLine("####### CSharpStudentCheckTC #######");
+    Console.WriteLine("####### StudentCheckTC #######");
     Console.WriteLine("####################################");
     Console.WriteLine();
 }

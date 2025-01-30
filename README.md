@@ -1,4 +1,4 @@
-# C Sharp Student Check Tim Corey
+# Student Check Tim Corey
 
 Esta aplicación de consola está basada en el primer mini proyecto propuesto por Tim Corey en su curso: [C# Mastercourse](https://www.iamtimcorey.com/courses/csharp-mastercourse/).
 
@@ -7,5 +7,5 @@ La aplicación debe solicitar al usuario su nombre (no apellido) y su edad. Post
 Para ejecutar la aplicación tras clonar el repositorio, sitúese en la raíz del directorio y ejecute:
 
 ```zsh
-dotnet run --project src/CSharpStudentCheckTC.Console/
+dotnet run --project src/StudentCheckTC.Console/
 ```
