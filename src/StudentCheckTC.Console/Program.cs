@@ -38,11 +38,10 @@ string AskUserForFirstName()
     do
     {
         var firstName = AskUserForInfo("What is your first name: ");
-
         if (
             string.IsNullOrWhiteSpace(firstName)
-            || int.TryParse(firstName, out int intFromName)
-            || double.TryParse(firstName, out double doubleFromName)
+            || int.TryParse(firstName, out _)
+            || double.TryParse(firstName, out _)
         )
         {
             Console.WriteLine("Invalid first name.");
@@ -63,7 +62,7 @@ int AskUserForAge()
             string.IsNullOrWhiteSpace(textAge)
             || !int.TryParse(textAge, out int intFromName)
             || intFromName < 1
-            || !double.TryParse(textAge, out double doubleFromName)
+            || !double.TryParse(textAge, out _)
         )
         {
             Console.WriteLine("Invalid age.");
