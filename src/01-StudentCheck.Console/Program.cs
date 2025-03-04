@@ -21,9 +21,9 @@ Console.WriteLine(outputMessage);
 
 void ShowAppInfo()
 {
-    Console.WriteLine("####################################");
-    Console.WriteLine("####### StudentCheckTC #######");
-    Console.WriteLine("####################################");
+    Console.WriteLine("##############################");
+    Console.WriteLine("####### Student Check  #######");
+    Console.WriteLine("##############################");
     Console.WriteLine();
 }
 
