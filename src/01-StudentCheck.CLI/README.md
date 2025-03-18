@@ -5,5 +5,5 @@ La aplicación debe solicitar al usuario su nombre (no apellido) y su edad. Post
 Para ejecutar la aplicación tras clonar el repositorio, sitúese en la raíz de la solución y ejecute:
 
 ```zsh
-dotnet run --project src/01-StudentCheck.Console/
+dotnet run --project src/01-StudentCheck.CLI/
 ```

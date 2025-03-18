@@ -5,5 +5,5 @@ La aplicación debe solicitar a los usuarios por su nombre o el de su grupo y el
 Para ejecutar la aplicación tras clonar el repositorio, sitúese en la raíz de la solución y ejecute:
 
 ```zsh
-dotnet run --project src/02-GuestBook.Console/
+dotnet run --project src/02-GuestBook.CLI/
 ```
