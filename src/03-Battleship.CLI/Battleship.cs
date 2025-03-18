@@ -8,16 +8,29 @@ static class Battleship
 {
     public static void Start()
     {
-        CLIDrawer.ShowWelcome();
-
-        var (p1, p2) = CreatePlayers();
+        var (playerName1, playerName2) = RequestPlayerNames();
+        var (initialPositions1, initialPositions2) = RequestInitialPositions(
+            playerName1,
+            playerName2
+        );
     }
 
-    static (Player p1, Player p2) CreatePlayers()
+    static (string name1, string name2) RequestPlayerNames()
     {
-        string playerName1 = UserInteraction.AskForPlayerNumber(1);
-        string playerName2 = UserInteraction.AskForPlayerNumber(2);
+        var playerName1 = UserInteraction.AskForPlayerNumber(1);
+        var playerName2 = UserInteraction.AskForPlayerNumber(2);
 
-        return (new Player { Name = playerName1 }, new Player { Name = playerName2 });
+        return (playerName1, playerName2);
+    }
+
+    static (string[] initialPositions1, string[] initialPositions2) RequestInitialPositions(
+        string playerName1,
+        string playerName2
+    )
+    {
+        var initialPositions1 = UserInteraction.AskForInitialPositions(playerName1);
+        var initialPositions2 = UserInteraction.AskForInitialPositions(playerName2);
+
+        return (initialPositions1, initialPositions2);
     }
 }
