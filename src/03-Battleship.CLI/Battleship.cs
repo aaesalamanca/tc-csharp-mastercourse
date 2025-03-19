@@ -17,8 +17,8 @@ static class Battleship
 
     static (string name1, string name2) RequestPlayerNames()
     {
-        var playerName1 = UserInteraction.AskForPlayerNumber(1);
-        var playerName2 = UserInteraction.AskForPlayerNumber(2);
+        var playerName1 = UserInteraction.AskForPlayerName(1);
+        var playerName2 = UserInteraction.AskForPlayerName(2);
 
         return (playerName1, playerName2);
     }

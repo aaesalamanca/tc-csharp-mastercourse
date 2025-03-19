@@ -1,9 +1,12 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace _03_Battleship.Libray.Services;
+namespace _03_Battleship.Library.Services;
 
 public static class InputValidationService
 {
+    public static bool IsValidPlayerName([NotNullWhen(true)] string? playerName) =>
+        !string.IsNullOrWhiteSpace(playerName);
+
     public static bool IsValidInitialShipPosition(
         [NotNullWhen(true)] string? initialShipPosition,
         List<string> initialPositions

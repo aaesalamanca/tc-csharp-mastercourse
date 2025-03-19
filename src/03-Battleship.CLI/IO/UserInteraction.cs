@@ -1,11 +1,11 @@
 using _03_Battleship.CLI.Drawing;
-using _03_Battleship.Libray.Services;
+using _03_Battleship.Library.Services;
 
 namespace _03_Battleship.CLI.IO;
 
 static class UserInteraction
 {
-    public static string AskForPlayerNumber(int playerNumber)
+    public static string AskForPlayerName(int playerNumber)
     {
         do
         {
@@ -13,7 +13,7 @@ static class UserInteraction
 
             var playerName = AskForPlayerInfo($"What is the name for player {playerNumber}?");
 
-            if (string.IsNullOrWhiteSpace(playerName))
+            if (!InputValidationService.IsValidPlayerName(playerName))
             {
                 Console.WriteLine(
                     "The player name can't be empty or whitespace. Press ENTER to continue."
@@ -33,17 +33,12 @@ static class UserInteraction
         do
         {
             CLIDrawer.ShowHeader();
-
-            Console.WriteLine(
-                $"{playerName}, these are the positions where you can place your ships:"
-            );
-            Console.WriteLine();
-            CLIDrawer.ShowInitialGrid();
+            CLIDrawer.ShowInitialGrid(playerName, initialPositions);
             Console.WriteLine();
 
             if (initialPositions.Count > 0)
             {
-                CLIDrawer.ShowInitialShipsLocation(initialPositions);
+                CLIDrawer.ShowInitialPositions(initialPositions);
                 Console.WriteLine();
             }
 
