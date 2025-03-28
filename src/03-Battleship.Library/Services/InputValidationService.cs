@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using _03_Battleship.Library.Models;
 
 namespace _03_Battleship.Library.Services;
 
@@ -29,12 +30,12 @@ public static class InputValidationService
                 return false;
         }
 
-        if (!int.TryParse(initialShipPosition[1].ToString(), out int parsedShipPosition))
+        if (!int.TryParse(initialShipPosition[1].ToString(), out int parsedShipPositionColumn))
         {
             return false;
         }
 
-        switch (parsedShipPosition)
+        switch (parsedShipPositionColumn)
         {
             case < 0
             or > 4:
@@ -42,5 +43,44 @@ public static class InputValidationService
         }
 
         return !initialPositions.Contains(initialShipPosition);
+    }
+
+    public static bool IsValidShot([NotNullWhen(true)] string? shot, Ship[] enemyShips)
+    {
+        if (string.IsNullOrWhiteSpace(shot))
+        {
+            return false;
+        }
+
+        if (shot.Length != 2)
+        {
+            return false;
+        }
+
+        switch (shot[0])
+        {
+            case < 'A'
+            or > 'E':
+                return false;
+        }
+
+        if (!int.TryParse(shot[1].ToString(), out int parsedShotColumn))
+        {
+            return false;
+        }
+
+        switch (parsedShotColumn)
+        {
+            case < 0
+            or > 4:
+                return false;
+        }
+
+        if (enemyShips.Any(ship => ship.Position == shot && ship.Status == ShipStatus.Sunk))
+        {
+            return false;
+        }
+
+        return true;
     }
 }
