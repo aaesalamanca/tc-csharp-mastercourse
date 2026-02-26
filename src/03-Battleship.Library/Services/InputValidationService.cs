@@ -25,8 +25,7 @@ public static class InputValidationService
 
         switch (initialShipPosition[0])
         {
-            case < 'A'
-            or > 'E':
+            case < 'A' or > 'E':
                 return false;
         }
 
@@ -37,8 +36,7 @@ public static class InputValidationService
 
         switch (parsedShipPositionColumn)
         {
-            case < 0
-            or > 4:
+            case < 0 or > 4:
                 return false;
         }
 
@@ -59,8 +57,7 @@ public static class InputValidationService
 
         switch (shot[0])
         {
-            case < 'A'
-            or > 'E':
+            case < 'A' or > 'E':
                 return false;
         }
 
@@ -71,8 +68,7 @@ public static class InputValidationService
 
         switch (parsedShotColumn)
         {
-            case < 0
-            or > 4:
+            case < 0 or > 4:
                 return false;
         }
 
